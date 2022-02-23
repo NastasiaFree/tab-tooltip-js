@@ -1,0 +1,69 @@
+const tabs = function (mainSelector){
+    const tabsContainer = document.querySelector(mainSelector);
+
+    let tabs = tabsContainer.querySelector('.tabs').children;
+    if(tabs.length === 0) return;
+
+    let tabContent = tabsContainer.querySelector('.tab-content').children;
+    if(tabContent.length === 0 || tabContent.length !== tabs.length) return;
+
+
+    [...tabs].map((elem, i) => {
+       elem.addEventListener('click', function (){
+           show(i);
+       })
+    });
+
+    function show(i){
+        [...tabs].map((elem, i) => {
+            elem.classList.remove('active');
+            tabContent[i].classList.remove('active');
+        })
+        tabs[i].classList.add('active');
+        tabContent[i].classList.add('active');
+    }
+}
+
+tabs('.tabs-conteiner')
+
+
+
+let tooltipElem;
+
+    document.onmouseover = function(event) {
+      let target = event.target;
+
+      // если у нас есть подсказка...
+      let tooltipHtml = target.dataset.tooltip;
+      if (!tooltipHtml) return;
+
+      // ...создадим элемент для подсказки
+
+      tooltipElem = document.createElement('div');
+      tooltipElem.className = 'tooltip';
+      tooltipElem.innerHTML = tooltipHtml;
+      document.body.append(tooltipElem);
+
+      // спозиционируем его сверху от аннотируемого элемента (top-center)
+      let coords = target.getBoundingClientRect();
+
+      let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+      if (left < 0) left = 0; // не заезжать за левый край окна
+
+      let top = coords.top - tooltipElem.offsetHeight - 5;
+      if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
+        top = coords.top + target.offsetHeight + 5;
+      }
+
+      tooltipElem.style.left = left + 'px';
+      tooltipElem.style.top = top + 'px';
+    };
+
+    document.onmouseout = function(e) {
+
+      if (tooltipElem) {
+        tooltipElem.remove();
+        tooltipElem = null;
+      }
+
+    };
