@@ -1,0 +1,108 @@
+body {
+    background-color: rgba(206, 235, 235, 0.041);
+  }
+
+
+  *{
+    margin: 0;
+    padding: 0 10px ;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+.tabs-conteiner{
+    margin: 0 auto;
+    width: 300px;
+}
+.tabs {
+    display: block;
+}
+
+ul{
+    list-style: none;
+}
+
+.tabs-conteiner .tabs{
+    display: flex;
+    background: azure;
+}
+
+.tabs-conteiner .tabs li{
+    border-bottom: 2px solid #363;
+    padding: 20px;
+}
+
+.tabs-conteiner .tabs li:hover{
+    background: #336633;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tabs-conteiner .tabs li.active{
+    background: #336633;
+    color: #fff;
+}
+
+.tabs-conteiner .tab-content li{
+    display: none;
+}
+
+.tabs-conteiner .tab-content li.active{
+    display: block;
+}
+
+.tab-content {
+    margin-bottom: 40px;
+    background-color: rgba(105, 240, 233, 0.253);
+    padding: 10px;
+}
+button {
+    padding: 10px;
+    margin: 30px;
+    font-weight: 700;
+    color: rgb(22, 16, 16);
+    background: linear-gradient(90deg, rgba(95,87,223,1) 0%, rgba(236,58,112,0.3309698879551821) 99%, rgba(0,212,255,1) 100%);
+}
+
+
+
+.tool{
+    color: rgb(216, 22, 22);
+    font-size: 18px;
+    text-decoration: underline;
+    /*position: relative;*/
+}
+
+
+
+
+  .tooltip {
+    position: fixed;
+    padding: 10px 20px;
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    font: italic 14px/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+  }
+
+
+  .block {
+      background-image: url("../tooltip/vector-4699584_1280.png");
+      background-position: center;
+      background-size: contain;
+      margin: 0 auto;
+      height: 200px;
+      width: 200px;
+      background-repeat: no-repeat;
+      font-size: 30px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
